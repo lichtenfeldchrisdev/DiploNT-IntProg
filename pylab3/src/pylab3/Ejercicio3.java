@@ -43,27 +43,27 @@ public class Ejercicio3 {
             { //Si los jugadores tienen número distinto
                 if (cj1 > cj2) 
                 {
-                    suma1 = cj1 + cj2;
+                    suma1 += cj1 + cj2;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j1);
-                    System.out.println("Suma: " + cj1 + cj2 + " Pts");
+                    System.out.println("Suma: " + (cj1 + cj2) + " Pts");
                 }
                 
                 if (cj2 > cj1) 
                 {
-                    suma2 = cj2 + cj1;
+                    suma2 += cj2 + cj1;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j2);
-                    System.out.println("Suma: " + cj1 + cj2 + " Pts");
+                    System.out.println("Suma: " + (cj1 + cj2) + " Pts");
                 }
             } else if (pj1 == 4) 
                 {  //Si no tiene numero distinto, veo si alguno tiene oro
-                    suma1 = cj1 + cj2;
+                    suma1 += cj1 + cj2;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j1);
-                    System.out.println("Suma: " + cj1 + cj2 + " Pts");
+                    System.out.println("Suma: " + (cj1 + cj2) + " Pts");
             } else if (pj2 == 4) 
             {
-                suma2 = cj2 + cj1;
+                suma2 += cj2 + cj1;
                 System.out.println("Ganador de la ronda N° " +  i  + " es: " + j2);
-                System.out.println("Suma: " + cj1 + cj2 + " Pts");
+                System.out.println("Suma: " + (cj1 + cj2) + " Pts");
             }else
             {
                 suma1=cj1;
@@ -75,37 +75,12 @@ public class Ejercicio3 {
         }
         if (suma1>suma2) 
         {
-            System.out.println("El ganador es "+j1);
+            System.out.println("El ganador es "+j1+" con "+suma1+" Pts");
         }else
         {
-            System.out.println("El ganador es "+j2);
+            System.out.println("El ganador es "+j2+" con "+suma2+" Pts");
         }
+        
     }
 }       
 
-
-
-/*for (int i = 0; i < 3; i++) 
-        {
-            c1j1= (int) ((Math.random()) * 12)+1;
-            c2j1= (int) ((Math.random()) * 12)+1;
-            c1j2= (int) ((Math.random()) * 12)+1;
-            c2j2= (int) ((Math.random()) * 12)+1;
-            p1j1= (int) ((Math.random()) * 4)+1;
-            p2j1= (int) ((Math.random()) * 4)+1;
-            p1j2= (int) ((Math.random()) * 4)+1;
-            p2j2= (int) ((Math.random()) * 4)+1;
-            
-            if (c1j1==4 || c2j1==4 || c1j2==4 ||c2j2==4) {
-            c1j1= (int) ((Math.random()) * 12)+1;
-            c2j1= (int) ((Math.random()) * 12)+1;
-            c1j2= (int) ((Math.random()) * 12)+1;
-            c2j2= (int) ((Math.random()) * 12)+1;
-            p1j1= (int) ((Math.random()) * 4)+1;
-            p2j1= (int) ((Math.random()) * 4)+1;
-            p1j2= (int) ((Math.random()) * 4)+1;
-            p2j2= (int) ((Math.random()) * 4)+1;
-            
-            if (c1j1==4 || c2j1==4 || c1j2==4 ||c2j2==4) {
-                
-            }*/
