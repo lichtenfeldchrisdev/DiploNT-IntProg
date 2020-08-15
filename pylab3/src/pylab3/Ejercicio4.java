@@ -14,7 +14,8 @@ public class Ejercicio4 {
         Scanner varEntrada = new Scanner(System.in);        
         System.out.println("Carga de inventario ");
         
-        do {            
+        do 
+        {            
             System.out.println("Ingrese producto: ");
             articulo = varEntrada.next();
             System.out.println("Ingrese el precio:");
