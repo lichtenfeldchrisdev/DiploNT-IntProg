@@ -17,12 +17,12 @@ public class Ejercicio3 {
         for (int i = 1; i < 3; i++) 
         {            
             cj1 = (int) ((Math.random()) * 12) + 1;
-            pj1 = (int) ((Math.random()) * 4) + 1;
+            pj1 = (int) ((Math.random()) * 4) + 1;              //genero numero y palo aleatorio
             cj2 = (int) ((Math.random()) * 12) + 1;
             pj2 = (int) ((Math.random()) * 4) + 1;
             
-            switch(pj1)
-            {
+            switch(pj1)                   //asigno palo con una cadena pa que quede ma lindo
+            {                             
                 case 1:{p1="Copas";break;}
                 case 2:{p1="Basto";break;}
                 case 3:{p1="Espadas";break;}
@@ -40,22 +40,22 @@ public class Ejercicio3 {
             System.out.println("Carta de "+j2+" es "+ cj2+" de "+p2 );
 
             if (cj1 < cj2 || cj2 < cj1) 
-            { //Si los jugadores tienen número distinto
+            { //Si los jugadores tienen número distinto comparo sus numeros
                 if (cj1 > cj2) 
-                {
+                {                                               // si gana el 1, torta pal 1
                     suma1 += cj1 + cj2;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j1);
                     System.out.println("Suma: " + (cj1 + cj2) + " Pts");
                 }
                 
                 if (cj2 > cj1) 
-                {
+                {                                               //si gana sel 2, torta pal 2
                     suma2 += cj2 + cj1;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j2);
                     System.out.println("Suma: " + (cj1 + cj2) + " Pts");
                 }
-            } else if (pj1 == 4) 
-                {  //Si no tiene numero distinto, veo si alguno tiene oro
+            } else if (pj1 == 4)    //Si no tiene numero distinto, veo si alguno tiene oro
+                {  
                     suma1 += cj1 + cj2;
                     System.out.println("Ganador de la ronda N° " +  i  + " es: " + j1);
                     System.out.println("Suma: " + (cj1 + cj2) + " Pts");

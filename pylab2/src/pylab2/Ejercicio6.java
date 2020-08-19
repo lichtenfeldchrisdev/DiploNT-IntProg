@@ -15,9 +15,9 @@ public class Ejercicio6 {
         
         System.out.println("Lado A");
         a = varEntrada.nextInt();
-        System.out.println("Lado A");           //Por que no puedo ingresar ladoscon coma siendo a,b,c, double?
+        System.out.println("Lado B");           //Por que no puedo ingresar ladoscon coma siendo a,b,c, double?
         b = varEntrada.nextInt();
-        System.out.println("Lado A");
+        System.out.println("Lado C");
         c = varEntrada.nextInt();
         
         sp = (a+b+c)/2;              //Por que si ingreso los lados como int, sup=0? habiendo def sup como double

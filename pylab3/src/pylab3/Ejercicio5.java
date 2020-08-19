@@ -20,30 +20,27 @@ public class Ejercicio5 {
 
             if (num != 0) {
                 if (num < 0) {
-                    break;      //para que no haga toda la comparacióncon el neg que rompe el do
-                }
-                if (num % 2 == 0) {
-                    cpar += 1;
-                    if (anterior % 2 == 0 && anterior != 0) {
-                        alter = false;
+                    break;             //rompo el ciclo para que no haga toda la comparación cuando ingreso un negativo para salir
+                }               
+                if (num % 2 == 0) {             
+                    cpar += 1;                 // si es par cuenta par
+                    if (anterior % 2 == 0 && anterior != 0) {      //siendo par, si el anterior tambien es par, baja la bardera     
+                        alter = false;                         //no tiene que comparar con el 0
                     }
                 } else {
-                    cimpar += 1;
-                    if (anterior % 2 != 0 && anterior != 0) {
+                    cimpar += 1;                            // si es impar,cuenta impar
+                    if (anterior % 2 != 0 && anterior != 0) {   //siendo impar,si el anterior tambien, baja la bandera
                         alter = false;
                     }
                 }
             }else{
-                hay0=true;
+                hay0=true;     //si hubo cero no entro a la comparacion y levanta bandera
             }
-            /* if ((anterior%2==0 && num%2==0) || (anterior%2!=0 && num%2!=0) && num!=0)  // si rompe altern pero despues la sigue no funciona
-            {
-                alter=false;
-            }*/
-            anterior = num;
-        } while (num >= 0);
+            
+            anterior = num;         //almaceno numero anterior para la prtox vuelta 
+        } while (num >= 0);     //rompe do-while si se ingresa negativo
 
-        if (alter == true) {
+        if (alter == true) {         // si la bandera se mantuvo true la secuencia fue alternada
             System.out.println("La secuencia se mantuvo alternada");
         } else {
             System.out.println("La secuencia no fue alternada");
@@ -52,7 +49,7 @@ public class Ejercicio5 {
         System.out.println("La cantidad de pares es: " + cpar + "\nLa cantidad de impares es: " + cimpar);
 
         if (hay0) {
-            System.out.println("Hubo al menos algún cero");
+            System.out.println("Hubo al menos algún cero");    
         } else {
             System.out.println("No hubo ceros");
         }

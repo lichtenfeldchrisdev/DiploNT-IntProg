@@ -15,8 +15,7 @@ public class Ejercicio7 {
         c = num/100;
         num -= c*100;
         d = num/10;
-        num -= d*10;
-        u = num;
+        num -= d*10;       
         
         System.out.println("Unidad= "+num);
         System.out.println("Decena= "+d);

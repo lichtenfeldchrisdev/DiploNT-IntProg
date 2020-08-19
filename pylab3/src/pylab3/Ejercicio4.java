@@ -17,16 +17,16 @@ public class Ejercicio4 {
         do 
         {            
             System.out.println("Ingrese producto: ");
-            articulo = varEntrada.next();
+            articulo = varEntrada.nextLine();
             System.out.println("Ingrese el precio:");
             pr = varEntrada.nextFloat();
             System.out.println("Ingrese código de decuento:");
             cl= varEntrada.nextFloat();
-            if (cl==1 || cl==2) 
+            if (cl==1 || cl==2)         
             {
                 prd = pr*(1-cl/10); //cuando hay una división todos los componentes del calculo deben ser float o double? 
                 System.out.println("El producto es :"+articulo+"\nPrecio de lista: $"+pr+"\nPrecio con desc: $"+prd+"\n");
-            }else 
+            }else       //si el codigo de descuento es correcto muestro los detalles 
             {
                 System.out.println("La clave ingresada es incorrecta \nvuelva a cargar el articulo");
             }
