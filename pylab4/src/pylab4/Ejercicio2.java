@@ -19,7 +19,7 @@ public class Ejercicio2 {
         
         for (int i = 0 ; i<lanz ; i++ )
         {
-            dado1[i] = (int) (Math.random()*6) + 1 ;
+            dado1[i] = (int) (Math.random()*6) + 1 ;                //lanzamiento de dados
             dado2[i] = (int) (Math.random()*6) + 1 ;            
             System.out.println("Lanzamiento "+(i+1)+"|\n\t\tDado 1 --> "+dado1[i]+"\t Dado2 --> "+dado2[i]);
             
