@@ -25,7 +25,7 @@ public class Ejercicio4 {
                 System.out.println("Acta N° "+(i+1)+" Código de infracción:");
                 cods[i] = entrada.nextInt() ;               //validacion del código ingresado en e arreglo
             }
-            while(cods[i]<1 && 20<cods[i]);
+            while(cods[i]<1 || 20<cods[i]);
             
             switch(cods[i])                             //carga del arreglo de importes 
             {
@@ -54,7 +54,7 @@ public class Ejercicio4 {
         } 
         System.out.println("El monto por actas labradas fue de $"+tot);
         
-        for (int i = 0 ; i < cods.length ; i++)
+        for (int i = 0 ; i < 20 ; i++)
         {    
             coincidencia = 0 ;            
             for (int j = 0 ; j < cods.length ; j++)
@@ -76,7 +76,7 @@ public class Ejercicio4 {
                 }
             }
         }
-        System.out.println("El código de infracción más recurrente fue el"+codMayCoinc+" en un total de "+mayorCoincidencia+" actas");
+        System.out.println("El código de infracción más recurrente fue el "+codMayCoinc+" en un total de "+mayorCoincidencia+" actas");
     }
 }
     
