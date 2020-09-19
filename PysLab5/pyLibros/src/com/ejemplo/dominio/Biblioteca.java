@@ -1,32 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.ejemplo.dominio;
 
-/**
- *
- * @author MARTIN
- */
-public class Biblioteca {
-    private final Libro[] estanteria;
-    private int ultimoLibro;
+public class Biblioteca {             //implicitamente todas las clases o sus padres heredan de Objects
+    private final Publicacion[] estanteria;  // final por que el tamaño del objeto estanteria es fijo . 
+    private int ultimo;
 
     public Biblioteca() {
-         estanteria = new Libro[20];
-         ultimoLibro = 0; 
+         estanteria = new Publicacion[20];
+         ultimo = 0; 
     }
     
     public Biblioteca(int cant) {
         estanteria = new Libro[cant];
     }
     
-    public Libro[] getEstanteria(){
+    public Publicacion[] getEstanteria(){
         return estanteria;
     }
     
-    public boolean agregarLibro(Libro unLibro){
+    public boolean agregarPublicacion(Publicacion unaPublicacion ){
         boolean aux = false; 
 //        for (int i = 0; i < estanteria.length; i++) {
 //            if(estanteria[i]==null){
@@ -35,11 +27,10 @@ public class Biblioteca {
 //                break;  // corto para que no agregue el libro a todos los lugares vacios
 //            }
 //        }
-        if (ultimoLibro < estanteria.length) {  //sino esta lena la estanteria 
-            estanteria[ultimoLibro] = unLibro;  //acceso directo (no secuencial) al arreglo
+        if (ultimo < estanteria.length) {  //sino esta lena la estanteria 
+            estanteria[ultimo] = unaPublicacion;  //acceso directo (no secuencial) al arreglo
             aux = true ;                        //es más eficiente que recorrer el arreglo
-            ultimoLibro++;
-            
+            ultimo++;            
         }
         return aux;//permite informar si efectivamente se pudo agregar el libro      
     }
@@ -48,21 +39,39 @@ public class Biblioteca {
         String aux = "Estanteria:\n[";
         for (int i = 0; i < estanteria.length; i++) {
             if(estanteria[i]!=null){        //si en estanteria[i] hay libro
-                aux += estanteria[i].getTitulo() + "\t|";
+                aux += estanteria[i].getTitulo() + "\t|";  // getTitulo() lo entienden los libros 
+                                                           // y las revistas por que ambar heredan de publicacion el metodo
             }else{
                 aux = aux + "Lugar vacío\t|";
-            }
-                
+            }           
         }
         aux +="]";
         
         return aux;
     }
     
+    public String buscarPublicacion(String titulo){
+        String aux = "La publicación no se encuentra en la biblioteca"; 
+        
+        for (int i = 0; i < estanteria.length; i++) {
+            if (estanteria[i]!=null){       
+                if (estanteria[i].getTitulo().equals(titulo)) {
+                    aux = estanteria[i].toString(); 
+                    break; // no quiero seguir buscando a menos que tengo el libro 2 veces
+                }
+            }
+        }
+        return aux ; 
+    }
     
-    
-    
-    
-    
-    
+    public int contarLibros(int paginas){
+        int aux=0 ;
+        for (int i = 0 ; i<estanteria.length ; i++){
+            if (estanteria[i]!=null){
+                if (estanteria[i] instanceof Libro) // Comparo tipo del objeto en estanteria[i] con el tipo Libro.
+                aux +=1;
+            }
+        }        
+        return aux ; 
+    }
 }

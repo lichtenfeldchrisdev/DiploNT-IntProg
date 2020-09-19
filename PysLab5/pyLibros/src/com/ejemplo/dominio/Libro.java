@@ -9,16 +9,18 @@ public class Libro extends Publicacion{ //Herencia: Todo libro es una publicaci√
     
 
     //m√©todos:
-    public Libro() {
+    public Libro() 
+    {
+        super();
         isbn = "Sin ISBN";
-        autor = "Desconocido";
-        
+        autor = "Desconocido";        
     }
 
-    public Libro(String isbn, String autor, String titulo, int paginas) {
+    public Libro(String isbn, String autor, String titulo, int paginas)
+    {
+        super(titulo, paginas);
         this.isbn = isbn;
-        this.autor = autor;
-        
+        this.autor = autor;      
     }
 
     //getters y setters:
