@@ -8,10 +8,12 @@ import javax.swing.JOptionPane;
  *
  * @author christopher
  */
+
 public class JFComprobacion extends javax.swing.JFrame {
 
     public JFComprobacion() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     @SuppressWarnings("unchecked")
