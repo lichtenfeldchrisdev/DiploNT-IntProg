@@ -19,6 +19,7 @@ public class Ejecutable {
         
         System.out.println(sala1.MostrarMayoresA(1600) + "\n\n");
         System.out.println(sala1.muestraObras());       
+        System.out.println(cuadro1.compareTo(momia1));
     }
     
 }
