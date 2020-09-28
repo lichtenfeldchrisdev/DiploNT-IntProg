@@ -7,10 +7,10 @@ public class Empleado extends Trabajador{
     private float sueldo ; 
     private float hsExtra ; 
 
-    public Empleado(float sueldo, String puesto, String legajo, String nombre, String fechaC) {
+    public Empleado(float sueldo, float hsExtra, String puesto, String legajo, String nombre, String fechaC) {
         super(puesto, legajo, nombre, fechaC);
         this.sueldo = sueldo;
-        hsExtra = 0;
+        this.hsExtra = hsExtra;
     }
 
     public void setSueldo(float sueldo) {

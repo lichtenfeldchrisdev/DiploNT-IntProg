@@ -38,6 +38,11 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administración de Personal");
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("PERSONAL PERMANENTE");
@@ -156,6 +161,10 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void jBAgregarPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPersonalActionPerformed
         new JDAgregarTrabajador(this, true).setVisible(true); 
     }//GEN-LAST:event_jBAgregarPersonalActionPerformed
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        JTPPersonal.setText(String.valueOf(empresa.getNomina().size()));
+    }//GEN-LAST:event_formFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

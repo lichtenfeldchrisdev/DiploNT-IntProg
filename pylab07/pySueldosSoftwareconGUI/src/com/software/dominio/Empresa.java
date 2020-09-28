@@ -7,10 +7,9 @@ import java.util.ArrayList;
 public class Empresa {
     private final String cuit ; 
     private final String razonSocial ; 
-    ArrayList<Trabajador> nomina = new ArrayList<>(30);   
+    ArrayList<Trabajador> nomina = new ArrayList<>();   
 
     public Empresa(String razonSocial) {
-        nomina = nominaInicial();
         this.cuit = generaCuit();
         this.razonSocial = razonSocial;
     }
@@ -67,12 +66,5 @@ public class Empresa {
         return cad.toString() ;         
     }
     
-    private ArrayList<Trabajador> nominaInicial(){
-        for (int i = 0; i < 15; i++) {
-            nomina.add(new Empleado(500 , "Desarrollador "+(i+1), String.valueOf((int)(10000*Math.random())),"juanito "+(i+1) ," dia/mes/año")) ;
-            nomina.add(new Consultor(300, "auditor "+(i+1), String.valueOf((int)(10000*Math.random())), "pepito "+(i+1), " dia/mes/año"));            
-        }
-        return nomina;
-    }
 }
     

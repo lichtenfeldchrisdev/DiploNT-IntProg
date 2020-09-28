@@ -6,11 +6,13 @@ public class Consultor extends Trabajador{
     private float cantHs ;
     private final float prHs ;
 
-    public Consultor(float prHs, String puesto, String legajo, String nombre, String fechaC) {
+    public Consultor(float cantHs, float prHs, String puesto, String legajo, String nombre, String fechaC) {
         super(puesto, legajo, nombre, fechaC);
+        this.cantHs = cantHs;
         this.prHs = prHs;
-        cantHs = 1 ; 
     }
+
+    
 
     public void setCantHs(float cantHs) {
         this.cantHs = cantHs;
