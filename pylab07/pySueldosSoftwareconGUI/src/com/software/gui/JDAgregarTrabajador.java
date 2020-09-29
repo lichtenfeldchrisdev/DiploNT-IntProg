@@ -1,5 +1,6 @@
 package com.software.gui;
 
+import com.software.basededatos.ConexionBd;
 import com.software.dominio.Consultor;
 import com.software.dominio.Empleado;
 import com.software.dominio.Empresa;
@@ -319,35 +320,36 @@ public class JDAgregarTrabajador extends javax.swing.JDialog {
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
         Trabajador x = null ;
-        try{
-            switch(JCTipoContraro.getSelectedIndex()){
-                case 1:{
-                    String puesto = JTFPuesto.getText();
-                    String legajo = JTFLegajo.getText(); 
-                    String nombre = JTFNombre.getText(); 
-                    String fechaC = JCFechaContrato.getDateFormatString();
-                    float sueldo = Float.parseFloat(JTFSueldoHstrab.getText());
-                    float HsExtra = Float.parseFloat(JTFHsExHsTr.getText());        
-                    x = new Empleado(sueldo, HsExtra, puesto, legajo, nombre, fechaC);
-                    break;
-                }
-                case 2:{
-                    String puesto = JTFPuesto.getText();
-                    String legajo = JTFLegajo.getText(); 
-                    String nombre = JTFNombre.getText(); 
-                    String fechaC = JCFechaContrato.getDateFormatString();
-                    float PrHora = Float.parseFloat(JTFSueldoHstrab.getText());
-                    float HsTrab = Float.parseFloat(JTFHsExHsTr.getText());        
-                    x = new Consultor(HsTrab, PrHora, puesto, legajo, nombre, fechaC);
-                    break;
-                }
+
+        switch(JCTipoContraro.getSelectedIndex()){
+            case 1:{
+                String puesto = JTFPuesto.getText();
+                String legajo = JTFLegajo.getText(); 
+                String nombre = JTFNombre.getText(); 
+                String fechaC = JCFechaContrato.getDateFormatString();
+                float sueldo = Float.parseFloat(JTFSueldoHstrab.getText());
+                float HsExtra = Float.parseFloat(JTFHsExHsTr.getText());        
+                x = new Empleado(sueldo, HsExtra, puesto, legajo, nombre, fechaC);
+                break;
             }
-        }catch(NumberFormatException e){
-            JOptionPane.showConfirmDialog(this, "No se pudo cargar el registro");
-        }
+            case 2:{
+                String puesto = JTFPuesto.getText();
+                String legajo = JTFLegajo.getText(); 
+                String nombre = JTFNombre.getText(); 
+                String fechaC = JCFechaContrato.getDateFormatString();
+                float PrHora = Float.parseFloat(JTFSueldoHstrab.getText());
+                float HsTrab = Float.parseFloat(JTFHsExHsTr.getText());        
+                x = new Consultor(HsTrab, PrHora, puesto, legajo, nombre, fechaC);
+                break;
+            }
+        }                
+        
+        new ConexionBd().agregarTrabajador(x);
+        
         Empresa empresa = new Empresa("Empresa de prueba");
         empresa.agregarEmpleado(x);
         JOptionPane.showMessageDialog(this, "Carga exitosa!");
+        
         JTFLegajo.setText("");
         JTFNombre.setText("");
         JTFPuesto.setText("");
